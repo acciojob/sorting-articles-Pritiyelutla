@@ -1,22 +1,27 @@
 //your JS code here. If required.
 const bands = ['The Plot in You', 'The Devil Wears Prada', 'Pierce the Veil', 'Norma Jean', 'The Bled', 'Say Anything', 'The Midway State', 'We Came as Romans', 'Counterparts', 'Oh, Sleeper', 'A Skylit Drive', 'Anywhere But Here', 'An Old Dog'];
-function sortArticles(arr) {
-            return arr.sort((a, b) => {
-                const stripArticle = str => str.replace(/^(a |an |the )/i, '').trim();
-                const titleA = stripArticle(a.toLowerCase());
-                const titleB = stripArticle(b.toLowerCase());
-                return titleA.localeCompare(titleB);
-            });
+function sortingArticles(articles) {
+            return articles.sort((a, b) =>{
+				let titleA = stripArticle(a.toLowerCase());
+				let titleB = sortArticles(b.toLowerCase());
+
+				if(titleA < titleB) return -1;
+				if(titleA > titleB) return 1;
+				return 0;
+			});
         }
 
-        // Get the sorted articles
-        const sortedArticles = sortArticles(articles);
+function stripArticle(title){
+	return title.replace(/^(a | an | the)/i, " ").trim();
+}	
 
-        // Get the ul element by its ID
-        const ul = document.getElementById('band');
 
-        // Add sorted articles to the ul element
-        sortedArticles.forEach(article => {
-            const li = document.createElement('li');
-            li.textContent = article;
-            ul.appendChild(li);
+let arr = sortingArticles(bands);
+let ol = document.getElementById("band");
+for(let i=0; i<arr.length; i++)
+	{
+		li = document.createElement("li");
+		li.innerText = sortedArticles[i];
+		ol.append(li);
+	}
+
