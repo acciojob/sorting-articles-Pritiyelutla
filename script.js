@@ -11,10 +11,10 @@ function sortArticles(articles) {
       return 0;
   });
 }
-const articles =  ['The Plot in You', 'The Devil Wears Prada', 'Pierce the Veil', 'Norma Jean', 'The Bled', 'Say Anything', 'The Midway State', 'We Came as Romans', 'Counterparts', 'Oh, Sleeper', 'A Skylit Drive', 'Anywhere But Here', 'An Old Dog'];
+const bands =  ['The Plot in You', 'The Devil Wears Prada', 'Pierce the Veil', 'Norma Jean', 'The Bled', 'Say Anything', 'The Midway State', 'We Came as Romans', 'Counterparts', 'Oh, Sleeper', 'A Skylit Drive', 'Anywhere But Here', 'An Old Dog'];
 //console.log(articles);
 
-const sortedArticles = sortArticles(articles);
+const sortedArticles = sortArticles(bands);
 let ul = document.getElementById("band");
 
 for(let i=0; i<sortedArticles.length; i++)
